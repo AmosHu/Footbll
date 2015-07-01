@@ -1,0 +1,14 @@
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.BLL.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.BLL.pdb
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\obj\Debug\Footbll.BLL.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\obj\Debug\Footbll.BLL.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\obj\Debug\Footbll.BLL.pdb
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.Model.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.Model.pdb
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.IRepository.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.Repository.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.IRepository.pdb
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.Repository.pdb
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll

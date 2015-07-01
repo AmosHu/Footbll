@@ -1,0 +1,8 @@
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\bin\Debug\Footbll.Model.dll.config
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\bin\Debug\Footbll.Model.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\bin\Debug\Footbll.Model.pdb
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\obj\Debug\Footbll.Model.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Model\obj\Debug\Footbll.Model.pdb

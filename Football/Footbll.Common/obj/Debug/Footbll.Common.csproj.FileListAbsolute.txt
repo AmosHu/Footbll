@@ -1,0 +1,4 @@
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\bin\Debug\Footbll.Common.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\bin\Debug\Footbll.Common.pdb
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\obj\Debug\Footbll.Common.dll
+C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\obj\Debug\Footbll.Common.pdb
