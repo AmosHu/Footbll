@@ -2,6 +2,7 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 using Footbll.Model;
 using Footbll.Repository;
@@ -27,6 +28,20 @@ namespace Footbll.BLL
         public bool AddEntity(Sys_User model)
         {
             return _userrepository.AddEntity(model);
+        }
+
+        #endregion
+
+        #region 用户登录
+
+        public Sys_User LoginByUserInfo(string strUserName, string strPwd)
+        {
+            Sys_User user = _userrepository.LoadEntities(u => u.UserName == strUserName && u.Password == strPwd).FirstOrDefault();
+
+            if (user == null)
+                user = _userrepository.LoadEntities(u => u.Email == strUserName && u.Password == strPwd).FirstOrDefault();
+
+            return user;
         }
 
         #endregion

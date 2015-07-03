@@ -16,10 +16,39 @@ namespace Footbll.Web.Controllers
     public class AccountController : Controller
     {
 
+        private MessageModel msg = null;
+
+        private Sys_UserBLL bll = new Sys_UserBLL();
+
         public ActionResult Index()
         {
             return View();
         }
+
+        #region 登录
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public JsonResult Login(string strLoginName, string strPwd)
+        {
+            try
+            {
+                Sys_User user = bll.LoginByUserInfo(strLoginName, strPwd);
+                msg = user != null ? new MessageModel() { MessageType = MessageType.Success, Messages = "用户注册成功！" } : new MessageModel() { MessageType = MessageType.Fail, Messages = "用户注册失败！" };
+            }
+            catch (Exception)
+            {
+                msg = new MessageModel() { Messages = "用户注册发生异常，请联系管理员！", MessageType = MessageType.Fail };
+            }
+
+            return Json(msg, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
 
         #region 注册
 
@@ -35,11 +64,7 @@ namespace Footbll.Web.Controllers
         [HttpPost]
         public JsonResult RegisterUser(Sys_User model)
         {
-            MessageModel msg = new MessageModel();
-
-            Sys_UserBLL bll = new Sys_UserBLL();
             bool isSuccess = false;
-
             try
             {
                 model.UserId = Guid.NewGuid();
@@ -56,7 +81,6 @@ namespace Footbll.Web.Controllers
         }
 
         #endregion
-
 
     }
 }

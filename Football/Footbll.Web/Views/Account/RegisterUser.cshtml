@@ -1,7 +1,7 @@
 ﻿@model Footbll.Model.Sys_User
 
 @{
-    ViewBag.Title = "RegisterUser";
+    ViewBag.Title = "我爱足球-注册";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <style type="text/css">
@@ -46,10 +46,10 @@
             <label for="input01">邮箱</label>
             @Html.TextBox("Email", "", new { @class = "form-control", @placeholder = "邮箱", @required = "", type = "email" })
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="button" id="btn_Add">注  册</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" id="btn_Add">注  册</button>
     </form>
-
 </div>
+<script src="~/Scripts/jquery.validate.js"></script>
 <script type="text/javascript">
     $(function () {
         $("#btn_Add").click(function () {
