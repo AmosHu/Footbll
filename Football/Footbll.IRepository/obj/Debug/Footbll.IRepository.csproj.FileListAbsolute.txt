@@ -8,3 +8,13 @@ C:\Users\Administrator\Desktop\Demo\Football\Footbll.IRepository\bin\Debug\Entit
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.IRepository\bin\Debug\Footbll.Model.pdb
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.IRepository\bin\Debug\EntityFramework.xml
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.IRepository\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Git\Footbll\Football\Footbll.IRepository\bin\Debug\Footbll.IRepository.dll
+D:\Git\Footbll\Football\Footbll.IRepository\bin\Debug\Footbll.IRepository.pdb
+D:\Git\Footbll\Football\Footbll.IRepository\bin\Debug\Footbll.Model.dll
+D:\Git\Footbll\Football\Footbll.IRepository\bin\Debug\EntityFramework.dll
+D:\Git\Footbll\Football\Footbll.IRepository\bin\Debug\Footbll.Model.pdb
+D:\Git\Footbll\Football\Footbll.IRepository\bin\Debug\EntityFramework.xml
+D:\Git\Footbll\Football\Footbll.IRepository\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Git\Footbll\Football\Footbll.IRepository\obj\Debug\Footbll.IRepository.csprojResolveAssemblyReference.cache
+D:\Git\Footbll\Football\Footbll.IRepository\obj\Debug\Footbll.IRepository.dll
+D:\Git\Footbll\Football\Footbll.IRepository\obj\Debug\Footbll.IRepository.pdb

@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="cae2ef862fa241beb2e74ac9ff4adcea" Name="Diagram1">
-        <EntityTypeShape EntityType="FootbllModel.FT_Comment" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootbllModel.Forum" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="FootbllModel.Sys_User" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FootbllModel.Forum" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FootbllModel.FT_Comment" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FootbllModel.Sys_User" Width="1.5" PointX="2.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

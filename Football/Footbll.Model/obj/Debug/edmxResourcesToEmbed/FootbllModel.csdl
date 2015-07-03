@@ -1,45 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="FootbllModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-  <EntityType Name="FT_Comment">
-    <Key>
-      <PropertyRef Name="CommentId" />
-    </Key>
-    <Property Name="CommentId" Type="Guid" Nullable="false" />
-    <Property Name="ForumId" Type="Guid" Nullable="false" />
-    <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="CreateUserId" Type="Guid" Nullable="false" />
-    <Property Name="Numbers" Type="Int32" Nullable="false" />
-  </EntityType>
+  <EntityContainer Name="FootbllEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Forum" EntityType="FootbllModel.Forum" />
+    <EntitySet Name="FT_Comment" EntityType="FootbllModel.FT_Comment" />
+    <EntitySet Name="Sys_User" EntityType="FootbllModel.Sys_User" />
+  </EntityContainer>
   <EntityType Name="Forum">
     <Key>
       <PropertyRef Name="ForumId" />
-      <PropertyRef Name="ForumTitle" />
-      <PropertyRef Name="ForumContent" />
-      <PropertyRef Name="CreateUser" />
-      <PropertyRef Name="CreateTime" />
-      <PropertyRef Name="ReplyAmount" />
-      <PropertyRef Name="CheckAmount" />
     </Key>
     <Property Name="ForumId" Type="Guid" Nullable="false" />
-    <Property Name="ForumTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="ForumContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ForumTitle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="ForumContent" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="LastCommenter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="LastCommentTime" Type="DateTime" Precision="3" />
     <Property Name="ReplyAmount" Type="Int32" Nullable="false" />
     <Property Name="CheckAmount" Type="Int32" Nullable="false" />
   </EntityType>
+  <EntityType Name="FT_Comment">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="Guid" Nullable="false" />
+    <Property Name="ForumId" Type="Guid" Nullable="false" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CreateUserId" Type="Guid" Nullable="false" />
+    <Property Name="Numbers" Type="Int32" Nullable="false" />
+  </EntityType>
   <EntityType Name="Sys_User">
     <Key>
-      <PropertyRef Name="Password" />
-      <PropertyRef Name="UserName" />
-      <PropertyRef Name="RegistTime" />
+      <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserId" Type="Guid" />
-    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="QQ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -50,9 +47,4 @@
     <Property Name="RegistTime" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
   </EntityType>
-  <EntityContainer Name="FootbllEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="FT_Comment" EntityType="Self.FT_Comment" />
-    <EntitySet Name="Forum" EntityType="Self.Forum" />
-    <EntitySet Name="Sys_User" EntityType="Self.Sys_User" />
-  </EntityContainer>
 </Schema>

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Footbll.Model.Sys_User
+
+@{
     ViewBag.Title = "RegisterUser";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -26,15 +28,15 @@
         }
 </style>
 <div class="container">
-    <form class="form-signin">
+    <form class="form-signin" id="AddUserForm">
         <h2 class="form-signin-heading">注册</h2>
         <div class="form-group">
             <label for="input01">用户名</label>
-            <input type="text" id="inputName" class="form-control" placeholder="用户名" required="">
+            @Html.TextBox("UserName", "", new { @class = "form-control", @placeholder = "用户名", @required = "" })
         </div>
         <div class="form-group">
             <label for="input01">密码</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="密码" required="">
+            @Html.TextBox("Password", "", new { @class = "form-control", @placeholder = "密码", @required = "", type = "password" })
         </div>
         <div class="form-group">
             <label for="input01">重复密码</label>
@@ -42,9 +44,19 @@
         </div>
         <div class="form-group">
             <label for="input01">邮箱</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="邮箱" required="">
+            @Html.TextBox("Email", "", new { @class = "form-control", @placeholder = "邮箱", @required = "", type = "email" })
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">注  册</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="btn_Add">注  册</button>
     </form>
 
 </div>
+<script type="text/javascript">
+    $(function () {
+        $("#btn_Add").click(function () {
+            var strData = $("#AddUserForm").serialize();
+            ajaxJson("/Account/RegisterUser", strData, function (data) {
+                alert(data);
+            });
+        })
+    })
+</script>

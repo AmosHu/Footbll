@@ -4,18 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FootbllModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“Footbll.dbo.Forum”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+    <Schema Namespace="FootbllModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityType Name="Forum">
           <Key>
             <PropertyRef Name="ForumId" />
-            <PropertyRef Name="ForumTitle" />
-            <PropertyRef Name="ForumContent" />
-            <PropertyRef Name="CreateUser" />
-            <PropertyRef Name="CreateTime" />
-            <PropertyRef Name="ReplyAmount" />
-            <PropertyRef Name="CheckAmount" />
           </Key>
           <Property Name="ForumId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="ForumTitle" Type="varchar" MaxLength="500" Nullable="false" />
@@ -38,15 +30,11 @@
           <Property Name="CreateUserId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Numbers" Type="int" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6002: 表/视图“Footbll.dbo.Sys_User”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="Sys_User">
           <Key>
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="RegistTime" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Type="uniqueidentifier" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
@@ -60,82 +48,51 @@
           <Property Name="LastLoginTime" Type="datetime" />
         </EntityType>
         <EntityContainer Name="FootbllModelStoreContainer">
+          <EntitySet Name="Forum" EntityType="Self.Forum" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FT_Comment" EntityType="Self.FT_Comment" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Forum" EntityType="Self.Forum" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-[Forum].[ForumId] AS [ForumId], 
-[Forum].[ForumTitle] AS [ForumTitle], 
-[Forum].[ForumContent] AS [ForumContent], 
-[Forum].[CreateUser] AS [CreateUser], 
-[Forum].[CreateTime] AS [CreateTime], 
-[Forum].[LastCommenter] AS [LastCommenter], 
-[Forum].[LastCommentTime] AS [LastCommentTime], 
-[Forum].[ReplyAmount] AS [ReplyAmount], 
-[Forum].[CheckAmount] AS [CheckAmount]
-FROM [dbo].[Forum] AS [Forum]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-[Sys_User].[UserId] AS [UserId], 
-[Sys_User].[Password] AS [Password], 
-[Sys_User].[UserName] AS [UserName], 
-[Sys_User].[Phone] AS [Phone], 
-[Sys_User].[Email] AS [Email], 
-[Sys_User].[QQ] AS [QQ], 
-[Sys_User].[Head] AS [Head], 
-[Sys_User].[Sex] AS [Sex], 
-[Sys_User].[FanAllianceId] AS [FanAllianceId], 
-[Sys_User].[FanAllianceName] AS [FanAllianceName], 
-[Sys_User].[RegistTime] AS [RegistTime], 
-[Sys_User].[LastLoginTime] AS [LastLoginTime]
-FROM [dbo].[Sys_User] AS [Sys_User]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FootbllModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityType Name="FT_Comment">
-          <Key>
-            <PropertyRef Name="CommentId" />
-          </Key>
-          <Property Name="CommentId" Type="Guid" Nullable="false" />
-          <Property Name="ForumId" Type="Guid" Nullable="false" />
-          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="CreateUserId" Type="Guid" Nullable="false" />
-          <Property Name="Numbers" Type="Int32" Nullable="false" />
-        </EntityType>
+        <EntityContainer Name="FootbllEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Forum" EntityType="FootbllModel.Forum" />
+          <EntitySet Name="FT_Comment" EntityType="FootbllModel.FT_Comment" />
+          <EntitySet Name="Sys_User" EntityType="FootbllModel.Sys_User" />
+        </EntityContainer>
         <EntityType Name="Forum">
           <Key>
             <PropertyRef Name="ForumId" />
-            <PropertyRef Name="ForumTitle" />
-            <PropertyRef Name="ForumContent" />
-            <PropertyRef Name="CreateUser" />
-            <PropertyRef Name="CreateTime" />
-            <PropertyRef Name="ReplyAmount" />
-            <PropertyRef Name="CheckAmount" />
           </Key>
           <Property Name="ForumId" Type="Guid" Nullable="false" />
-          <Property Name="ForumTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ForumContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ForumTitle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="ForumContent" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="LastCommenter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LastCommentTime" Type="DateTime" Precision="3" />
           <Property Name="ReplyAmount" Type="Int32" Nullable="false" />
           <Property Name="CheckAmount" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="FT_Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Guid" Nullable="false" />
+          <Property Name="ForumId" Type="Guid" Nullable="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateUserId" Type="Guid" Nullable="false" />
+          <Property Name="Numbers" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="Sys_User">
           <Key>
-            <PropertyRef Name="Password" />
-            <PropertyRef Name="UserName" />
-            <PropertyRef Name="RegistTime" />
+            <PropertyRef Name="UserId" />
           </Key>
-          <Property Name="UserId" Type="Guid" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="QQ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -146,59 +103,54 @@ FROM [dbo].[Sys_User] AS [Sys_User]</DefiningQuery>
           <Property Name="RegistTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
         </EntityType>
-        <EntityContainer Name="FootbllEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="FT_Comment" EntityType="Self.FT_Comment" />
-          <EntitySet Name="Forum" EntityType="Self.Forum" />
-          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="FootbllModelStoreContainer" CdmEntityContainer="FootbllEntities">
-          <EntitySetMapping Name="FT_Comment">
-            <EntityTypeMapping TypeName="FootbllModel.FT_Comment">
-              <MappingFragment StoreEntitySet="FT_Comment">
-                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
-                <ScalarProperty Name="ForumId" ColumnName="ForumId" />
-                <ScalarProperty Name="Content" ColumnName="Content" />
-                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
-                <ScalarProperty Name="Numbers" ColumnName="Numbers" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Forum">
             <EntityTypeMapping TypeName="FootbllModel.Forum">
               <MappingFragment StoreEntitySet="Forum">
-                <ScalarProperty Name="ForumId" ColumnName="ForumId" />
-                <ScalarProperty Name="ForumTitle" ColumnName="ForumTitle" />
-                <ScalarProperty Name="ForumContent" ColumnName="ForumContent" />
-                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
-                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-                <ScalarProperty Name="LastCommenter" ColumnName="LastCommenter" />
-                <ScalarProperty Name="LastCommentTime" ColumnName="LastCommentTime" />
-                <ScalarProperty Name="ReplyAmount" ColumnName="ReplyAmount" />
                 <ScalarProperty Name="CheckAmount" ColumnName="CheckAmount" />
+                <ScalarProperty Name="ReplyAmount" ColumnName="ReplyAmount" />
+                <ScalarProperty Name="LastCommentTime" ColumnName="LastCommentTime" />
+                <ScalarProperty Name="LastCommenter" ColumnName="LastCommenter" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="ForumContent" ColumnName="ForumContent" />
+                <ScalarProperty Name="ForumTitle" ColumnName="ForumTitle" />
+                <ScalarProperty Name="ForumId" ColumnName="ForumId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FT_Comment">
+            <EntityTypeMapping TypeName="FootbllModel.FT_Comment">
+              <MappingFragment StoreEntitySet="FT_Comment">
+                <ScalarProperty Name="Numbers" ColumnName="Numbers" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="ForumId" ColumnName="ForumId" />
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Sys_User">
             <EntityTypeMapping TypeName="FootbllModel.Sys_User">
               <MappingFragment StoreEntitySet="Sys_User">
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="QQ" ColumnName="QQ" />
-                <ScalarProperty Name="Head" ColumnName="Head" />
-                <ScalarProperty Name="Sex" ColumnName="Sex" />
-                <ScalarProperty Name="FanAllianceId" ColumnName="FanAllianceId" />
-                <ScalarProperty Name="FanAllianceName" ColumnName="FanAllianceName" />
-                <ScalarProperty Name="RegistTime" ColumnName="RegistTime" />
                 <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+                <ScalarProperty Name="RegistTime" ColumnName="RegistTime" />
+                <ScalarProperty Name="FanAllianceName" ColumnName="FanAllianceName" />
+                <ScalarProperty Name="FanAllianceId" ColumnName="FanAllianceId" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="Head" ColumnName="Head" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

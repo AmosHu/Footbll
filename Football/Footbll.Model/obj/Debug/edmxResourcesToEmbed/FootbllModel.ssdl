@@ -1,16 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="FootbllModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-  <!--生成过程中发现错误:
-警告 6002: 表/视图“Footbll.dbo.Forum”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
   <EntityType Name="Forum">
     <Key>
       <PropertyRef Name="ForumId" />
-      <PropertyRef Name="ForumTitle" />
-      <PropertyRef Name="ForumContent" />
-      <PropertyRef Name="CreateUser" />
-      <PropertyRef Name="CreateTime" />
-      <PropertyRef Name="ReplyAmount" />
-      <PropertyRef Name="CheckAmount" />
     </Key>
     <Property Name="ForumId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="ForumTitle" Type="varchar" MaxLength="500" Nullable="false" />
@@ -33,15 +25,11 @@
     <Property Name="CreateUserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Numbers" Type="int" Nullable="false" />
   </EntityType>
-  <!--生成过程中发现错误:
-警告 6002: 表/视图“Footbll.dbo.Sys_User”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
   <EntityType Name="Sys_User">
     <Key>
-      <PropertyRef Name="Password" />
-      <PropertyRef Name="UserName" />
-      <PropertyRef Name="RegistTime" />
+      <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Phone" Type="varchar" MaxLength="50" />
@@ -55,35 +43,8 @@
     <Property Name="LastLoginTime" Type="datetime" />
   </EntityType>
   <EntityContainer Name="FootbllModelStoreContainer">
+    <EntitySet Name="Forum" EntityType="Self.Forum" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FT_Comment" EntityType="Self.FT_Comment" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Forum" EntityType="Self.Forum" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[Forum].[ForumId] AS [ForumId], 
-[Forum].[ForumTitle] AS [ForumTitle], 
-[Forum].[ForumContent] AS [ForumContent], 
-[Forum].[CreateUser] AS [CreateUser], 
-[Forum].[CreateTime] AS [CreateTime], 
-[Forum].[LastCommenter] AS [LastCommenter], 
-[Forum].[LastCommentTime] AS [LastCommentTime], 
-[Forum].[ReplyAmount] AS [ReplyAmount], 
-[Forum].[CheckAmount] AS [CheckAmount]
-FROM [dbo].[Forum] AS [Forum]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Sys_User" EntityType="Self.Sys_User" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-[Sys_User].[UserId] AS [UserId], 
-[Sys_User].[Password] AS [Password], 
-[Sys_User].[UserName] AS [UserName], 
-[Sys_User].[Phone] AS [Phone], 
-[Sys_User].[Email] AS [Email], 
-[Sys_User].[QQ] AS [QQ], 
-[Sys_User].[Head] AS [Head], 
-[Sys_User].[Sex] AS [Sex], 
-[Sys_User].[FanAllianceId] AS [FanAllianceId], 
-[Sys_User].[FanAllianceName] AS [FanAllianceName], 
-[Sys_User].[RegistTime] AS [RegistTime], 
-[Sys_User].[LastLoginTime] AS [LastLoginTime]
-FROM [dbo].[Sys_User] AS [Sys_User]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

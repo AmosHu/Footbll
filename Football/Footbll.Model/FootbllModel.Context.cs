@@ -25,8 +25,8 @@ namespace Footbll.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<FT_Comment> FT_Comment { get; set; }
         public DbSet<Forum> Forum { get; set; }
+        public DbSet<FT_Comment> FT_Comment { get; set; }
         public DbSet<Sys_User> Sys_User { get; set; }
     }
 }

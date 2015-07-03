@@ -2,3 +2,8 @@ C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\bin\Debug\Footbll.Co
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\bin\Debug\Footbll.Common.pdb
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\obj\Debug\Footbll.Common.dll
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.Common\obj\Debug\Footbll.Common.pdb
+D:\Git\Footbll\Football\Footbll.Common\bin\Debug\Footbll.Common.dll
+D:\Git\Footbll\Football\Footbll.Common\bin\Debug\Footbll.Common.pdb
+D:\Git\Footbll\Football\Footbll.Common\obj\Debug\Footbll.Common.csprojResolveAssemblyReference.cache
+D:\Git\Footbll\Football\Footbll.Common\obj\Debug\Footbll.Common.dll
+D:\Git\Footbll\Football\Footbll.Common\obj\Debug\Footbll.Common.pdb

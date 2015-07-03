@@ -14,7 +14,7 @@ namespace Footbll.Model
     
     public partial class Sys_User
     {
-        public Nullable<System.Guid> UserId { get; set; }
+        public System.Guid UserId { get; set; }
         public string Password { get; set; }
         public string UserName { get; set; }
         public string Phone { get; set; }

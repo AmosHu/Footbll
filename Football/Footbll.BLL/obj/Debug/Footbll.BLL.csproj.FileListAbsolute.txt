@@ -12,3 +12,17 @@ C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.IRepo
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\Footbll.Repository.pdb
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\EntityFramework.xml
 C:\Users\Administrator\Desktop\Demo\Football\Footbll.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.BLL.dll
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.BLL.pdb
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.IRepository.dll
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.Model.dll
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.Repository.dll
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\EntityFramework.dll
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.IRepository.pdb
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.Model.pdb
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\Footbll.Repository.pdb
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\EntityFramework.xml
+D:\Git\Footbll\Football\Footbll.BLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Git\Footbll\Football\Footbll.BLL\obj\Debug\Footbll.BLL.csprojResolveAssemblyReference.cache
+D:\Git\Footbll\Football\Footbll.BLL\obj\Debug\Footbll.BLL.dll
+D:\Git\Footbll\Football\Footbll.BLL\obj\Debug\Footbll.BLL.pdb

@@ -1,48 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="FootbllModelStoreContainer" CdmEntityContainer="FootbllEntities">
-    <EntitySetMapping Name="FT_Comment">
-      <EntityTypeMapping TypeName="FootbllModel.FT_Comment">
-        <MappingFragment StoreEntitySet="FT_Comment">
-          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
-          <ScalarProperty Name="ForumId" ColumnName="ForumId" />
-          <ScalarProperty Name="Content" ColumnName="Content" />
-          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
-          <ScalarProperty Name="Numbers" ColumnName="Numbers" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Forum">
       <EntityTypeMapping TypeName="FootbllModel.Forum">
         <MappingFragment StoreEntitySet="Forum">
-          <ScalarProperty Name="ForumId" ColumnName="ForumId" />
-          <ScalarProperty Name="ForumTitle" ColumnName="ForumTitle" />
-          <ScalarProperty Name="ForumContent" ColumnName="ForumContent" />
-          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
-          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
-          <ScalarProperty Name="LastCommenter" ColumnName="LastCommenter" />
-          <ScalarProperty Name="LastCommentTime" ColumnName="LastCommentTime" />
-          <ScalarProperty Name="ReplyAmount" ColumnName="ReplyAmount" />
           <ScalarProperty Name="CheckAmount" ColumnName="CheckAmount" />
+          <ScalarProperty Name="ReplyAmount" ColumnName="ReplyAmount" />
+          <ScalarProperty Name="LastCommentTime" ColumnName="LastCommentTime" />
+          <ScalarProperty Name="LastCommenter" ColumnName="LastCommenter" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="ForumContent" ColumnName="ForumContent" />
+          <ScalarProperty Name="ForumTitle" ColumnName="ForumTitle" />
+          <ScalarProperty Name="ForumId" ColumnName="ForumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FT_Comment">
+      <EntityTypeMapping TypeName="FootbllModel.FT_Comment">
+        <MappingFragment StoreEntitySet="FT_Comment">
+          <ScalarProperty Name="Numbers" ColumnName="Numbers" />
+          <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="ForumId" ColumnName="ForumId" />
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Sys_User">
       <EntityTypeMapping TypeName="FootbllModel.Sys_User">
         <MappingFragment StoreEntitySet="Sys_User">
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="Phone" ColumnName="Phone" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="QQ" ColumnName="QQ" />
-          <ScalarProperty Name="Head" ColumnName="Head" />
-          <ScalarProperty Name="Sex" ColumnName="Sex" />
-          <ScalarProperty Name="FanAllianceId" ColumnName="FanAllianceId" />
-          <ScalarProperty Name="FanAllianceName" ColumnName="FanAllianceName" />
-          <ScalarProperty Name="RegistTime" ColumnName="RegistTime" />
           <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+          <ScalarProperty Name="RegistTime" ColumnName="RegistTime" />
+          <ScalarProperty Name="FanAllianceName" ColumnName="FanAllianceName" />
+          <ScalarProperty Name="FanAllianceId" ColumnName="FanAllianceId" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Head" ColumnName="Head" />
+          <ScalarProperty Name="QQ" ColumnName="QQ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
