@@ -1,4 +1,5 @@
 ﻿using Footbll.BLL;
+using Football.IBLL;
 using Footbll.Model;
 using Footbll.Web.Models;
 
@@ -18,7 +19,12 @@ namespace Footbll.Web.Controllers
 
         private MessageModel msg = null;
 
-        private Sys_UserBLL bll = new Sys_UserBLL();
+        private readonly ISys_User _sysUserBLL;
+
+        public AccountController()
+        {
+            _sysUserBLL = new Sys_UserBLL();
+        }
 
         public ActionResult Index()
         {
@@ -37,7 +43,7 @@ namespace Footbll.Web.Controllers
         {
             try
             {
-                Sys_User user = bll.LoginByUserInfo(strLoginName, strPwd);
+                Sys_User user = _sysUserBLL.LoginByUserInfo(strLoginName, strPwd);
                 msg = user != null ? new MessageModel() { MessageType = MessageType.Success, Messages = "用户注册成功！" } : new MessageModel() { MessageType = MessageType.Fail, Messages = "用户注册失败！" };
             }
             catch (Exception)
@@ -69,7 +75,7 @@ namespace Footbll.Web.Controllers
             {
                 model.UserId = Guid.NewGuid();
                 model.RegistTime = DateTime.Now;
-                isSuccess = bll.AddEntity(model);
+                isSuccess = _sysUserBLL.AddUser(model);
                 msg = isSuccess == true ? new MessageModel() { MessageType = MessageType.Success, Messages = "用户注册成功！" } : new MessageModel() { MessageType = MessageType.Fail, Messages = "用户注册失败！" };
             }
             catch (Exception)
@@ -79,6 +85,16 @@ namespace Footbll.Web.Controllers
 
             return Json(msg, JsonRequestBehavior.AllowGet);
         }
+
+        /// <summary>
+        /// 注册成功跳转页面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult RegisterSuccess()
+        {
+            return View();
+        }
+
 
         #endregion
 

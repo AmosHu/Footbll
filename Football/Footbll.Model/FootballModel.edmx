@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="FootballModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="Forum">
+          <Key>
+            <PropertyRef Name="ForumId" />
+          </Key>
+          <Property Name="ForumId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ForumTitle" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="ForumContent" Type="text" Nullable="false" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="LastCommenter" Type="varchar" MaxLength="50" />
+          <Property Name="LastCommentTime" Type="datetime" />
+          <Property Name="ReplyAmount" Type="int" Nullable="false" />
+          <Property Name="CheckAmount" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FT_Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ForumId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Content" Type="text" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="CreateUserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Numbers" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="QQ" Type="varchar" MaxLength="50" />
+          <Property Name="Head" Type="varchar" MaxLength="500" />
+          <Property Name="Sex" Type="int" />
+          <Property Name="FanAllianceId" Type="varchar" MaxLength="50" />
+          <Property Name="FanAllianceName" Type="varchar" MaxLength="50" />
+          <Property Name="RegistTime" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginTime" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="FootballModelStoreContainer">
+          <EntitySet Name="Forum" EntityType="Self.Forum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FT_Comment" EntityType="Self.FT_Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FootballModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityType Name="Forum">
+          <Key>
+            <PropertyRef Name="ForumId" />
+          </Key>
+          <Property Name="ForumId" Type="Guid" Nullable="false" />
+          <Property Name="ForumTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ForumContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateUser" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastCommenter" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastCommentTime" Type="DateTime" Precision="3" />
+          <Property Name="ReplyAmount" Type="Int32" Nullable="false" />
+          <Property Name="CheckAmount" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FT_Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Guid" Nullable="false" />
+          <Property Name="ForumId" Type="Guid" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateUserId" Type="Guid" Nullable="false" />
+          <Property Name="Numbers" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="QQ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Head" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Sex" Type="Int32" />
+          <Property Name="FanAllianceId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FanAllianceName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RegistTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="FootballEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Forum" EntityType="Self.Forum" />
+          <EntitySet Name="FT_Comment" EntityType="Self.FT_Comment" />
+          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FootballModelStoreContainer" CdmEntityContainer="FootballEntities">
+          <EntitySetMapping Name="Forum">
+            <EntityTypeMapping TypeName="FootballModel.Forum">
+              <MappingFragment StoreEntitySet="Forum">
+                <ScalarProperty Name="ForumId" ColumnName="ForumId" />
+                <ScalarProperty Name="ForumTitle" ColumnName="ForumTitle" />
+                <ScalarProperty Name="ForumContent" ColumnName="ForumContent" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="LastCommenter" ColumnName="LastCommenter" />
+                <ScalarProperty Name="LastCommentTime" ColumnName="LastCommentTime" />
+                <ScalarProperty Name="ReplyAmount" ColumnName="ReplyAmount" />
+                <ScalarProperty Name="CheckAmount" ColumnName="CheckAmount" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FT_Comment">
+            <EntityTypeMapping TypeName="FootballModel.FT_Comment">
+              <MappingFragment StoreEntitySet="FT_Comment">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="ForumId" ColumnName="ForumId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+                <ScalarProperty Name="CreateUserId" ColumnName="CreateUserId" />
+                <ScalarProperty Name="Numbers" ColumnName="Numbers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_User">
+            <EntityTypeMapping TypeName="FootballModel.Sys_User">
+              <MappingFragment StoreEntitySet="Sys_User">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="QQ" ColumnName="QQ" />
+                <ScalarProperty Name="Head" ColumnName="Head" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="FanAllianceId" ColumnName="FanAllianceId" />
+                <ScalarProperty Name="FanAllianceName" ColumnName="FanAllianceName" />
+                <ScalarProperty Name="RegistTime" ColumnName="RegistTime" />
+                <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

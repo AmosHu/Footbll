@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footbll.BLL", "Footbll.BLL\Footbll.BLL.csproj", "{7F8F34A8-080B-48CA-9E78-ACD5D79203B3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.BLL", "Footbll.BLL\Football.BLL.csproj", "{7F8F34A8-080B-48CA-9E78-ACD5D79203B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footbll.Web", "Footbll.Web\Footbll.Web.csproj", "{564A1D4C-A36F-4A7E-9596-65231DAAFE59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Web", "Footbll.Web\Football.Web.csproj", "{564A1D4C-A36F-4A7E-9596-65231DAAFE59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footbll.Common", "Footbll.Common\Footbll.Common.csproj", "{947E6078-9CA2-47E6-AE95-73524CD0CA1C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Common", "Footbll.Common\Football.Common.csproj", "{947E6078-9CA2-47E6-AE95-73524CD0CA1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footbll.Model", "Footbll.Model\Footbll.Model.csproj", "{CEB5D15C-5E40-4888-A538-0DAABC4B9E1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Model", "Footbll.Model\Football.Model.csproj", "{CEB5D15C-5E40-4888-A538-0DAABC4B9E1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footbll.Repository", "Footbll.Repository\Footbll.Repository.csproj", "{CA8A690E-6CBE-4DF0-9134-513C5B333FB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Repository", "Footbll.Repository\Football.Repository.csproj", "{CA8A690E-6CBE-4DF0-9134-513C5B333FB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Footbll.IRepository", "Footbll.IRepository\Footbll.IRepository.csproj", "{F3A2304D-0177-400A-BAEC-244FEF6BCD8E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.IRepository", "Footbll.IRepository\Football.IRepository.csproj", "{F3A2304D-0177-400A-BAEC-244FEF6BCD8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.IBLL", "Football.IBLL\Football.IBLL.csproj", "{D7D145BF-F984-4E3C-B47C-A8B6D8A6FA8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F3A2304D-0177-400A-BAEC-244FEF6BCD8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3A2304D-0177-400A-BAEC-244FEF6BCD8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3A2304D-0177-400A-BAEC-244FEF6BCD8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D145BF-F984-4E3C-B47C-A8B6D8A6FA8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D145BF-F984-4E3C-B47C-A8B6D8A6FA8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D145BF-F984-4E3C-B47C-A8B6D8A6FA8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D145BF-F984-4E3C-B47C-A8B6D8A6FA8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

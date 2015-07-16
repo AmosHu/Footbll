@@ -1,0 +1,10 @@
+D:\Git\Footbll\Football\Football.IBLL\bin\Debug\Football.IBLL.dll
+D:\Git\Footbll\Football\Football.IBLL\bin\Debug\Football.IBLL.pdb
+D:\Git\Footbll\Football\Football.IBLL\bin\Debug\Footbll.Model.dll
+D:\Git\Footbll\Football\Football.IBLL\bin\Debug\EntityFramework.dll
+D:\Git\Footbll\Football\Football.IBLL\bin\Debug\Footbll.Model.pdb
+D:\Git\Footbll\Football\Football.IBLL\bin\Debug\EntityFramework.xml
+D:\Git\Footbll\Football\Football.IBLL\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Git\Footbll\Football\Football.IBLL\obj\Debug\Football.IBLL.csprojResolveAssemblyReference.cache
+D:\Git\Footbll\Football\Football.IBLL\obj\Debug\Football.IBLL.dll
+D:\Git\Footbll\Football\Football.IBLL\obj\Debug\Football.IBLL.pdb

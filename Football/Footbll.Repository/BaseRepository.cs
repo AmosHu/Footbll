@@ -13,11 +13,11 @@ namespace Footbll.Repository
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class,new()
     {
-        FootbllEntities dbEntities;
+        FootballEntities dbEntities;
 
         public BaseRepository()
         {
-            dbEntities = new FootbllEntities();
+            dbEntities = new FootballEntities();
         }
 
         /// <summary>

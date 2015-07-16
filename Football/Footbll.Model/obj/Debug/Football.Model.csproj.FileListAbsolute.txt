@@ -1,0 +1,8 @@
+D:\Git\Footbll\Football\Footbll.Model\bin\Debug\Footbll.Model.dll
+D:\Git\Footbll\Football\Footbll.Model\bin\Debug\Footbll.Model.pdb
+D:\Git\Footbll\Football\Footbll.Model\bin\Debug\EntityFramework.dll
+D:\Git\Footbll\Football\Footbll.Model\bin\Debug\EntityFramework.xml
+D:\Git\Footbll\Football\Footbll.Model\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Git\Footbll\Football\Footbll.Model\obj\Debug\Footbll.Model.dll
+D:\Git\Footbll\Football\Footbll.Model\obj\Debug\Footbll.Model.pdb
+D:\Git\Footbll\Football\Footbll.Model\bin\Debug\Footbll.Model.dll.config

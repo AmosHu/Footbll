@@ -7,11 +7,12 @@ using System.Linq;
 using Footbll.Model;
 using Footbll.Repository;
 using Footbll.IRepository;
+using Football.IBLL;
 
 namespace Footbll.BLL
 {
     //Sys_User
-    public partial class Sys_UserBLL
+    public partial class Sys_UserBLL : ISys_User
     {
         private readonly ISys_UserRepository _userrepository;
 
@@ -22,10 +23,12 @@ namespace Footbll.BLL
 
         #region 添加实体对象
 
-        /// <summary>
-        /// 增加一条数据
+        //// <summary>
+        /// 添加用户
         /// </summary>
-        public bool AddEntity(Sys_User model)
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public bool AddUser(Sys_User model)
         {
             return _userrepository.AddEntity(model);
         }

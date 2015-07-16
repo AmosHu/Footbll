@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "我爱足球-发帖";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .container {
+        padding-top: 80px;
+    }
+
+    .width300 {
+        width: 300px;
+    }
+
+    .icon-search {
+        /*background: url(../Images/All_images.png) -1300px -200px no-repeat;*/
+        height: 40px;
+        line-height: 20px;
+        width: 400px;
+        margin: -38px 0px 0px 740px;
+        font-size: 12px;
+        float: left;
+        background: #FEFEE9;
+    }
+</style>
+
+@using (Html.BeginForm("Forum", "PostForum", null, FormMethod.Post, new { Id = "AddPostForum" }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset class="content">
+        <div class="clear width300">
+            <input type="text" id="ForumTitle" name="ForumTitle" class="form-control" placeholder="标题">
+            <div class="icon-search">1：禁止任何恶意侮辱攻击会员球迷球队球星等，他人违规请点报告-举报 ；2：本论坛为体育论坛，禁止讨论任何政治色情等</div>
+        </div>
+        <div class="clear">
+            <textarea id="ForumContent" name="ProjectContent" style=" margin-top: 10px; height: 400px"></textarea>
+        </div>
+        <div class="clear">
+            <div class="filedTitle left">
+                &nbsp;
+            </div>
+            <p>
+                <button type="button" id="btn_AddForum" class="btn btn-primary">发表帖子</button>
+            </p>
+        </div>
+    </fieldset>
+}
+
+<script src="~/Scripts/ueditor/ueditor.config.js"></script>
+<script src="~/Scripts/ueditor/ueditor.all.min.js"></script>
+
+<script type="text/javascript">
+    var UEDITOR_HOME_URL = "Scripts/ueditor/";　　//从项目的根目录开始
+
+    var ue = UE.getEditor('ForumContent', {
+        toolbars: [[
+            'fullscreen', 'source', '|', 'undo', 'redo', '|',
+            'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'forecolor', '|',
+            'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'simpleupload', 'insertimage', 'emotion', 'attachment',
+        ]]
+    });
+    $(function () {
+        $("#btn_AddForum").click(function () {
+            var strData = {
+                ForumTitle: $("#ForumTitle").val(),
+                ForumContent: UE.getEditor('ForumContent').getContent()
+            }
+            ajaxJson("/Forum/PostForum", strData, function (data) {
+                if (data.MessageType == 0) {
+                    window.location.href = "/Home/Index";
+                }
+            });
+
+        });
+    })
+</script>
+

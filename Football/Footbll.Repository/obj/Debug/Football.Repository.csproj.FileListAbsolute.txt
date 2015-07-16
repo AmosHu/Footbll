@@ -1,0 +1,12 @@
+D:\Git\Footbll\Football\Footbll.Repository\obj\Debug\Football.Repository.csprojResolveAssemblyReference.cache
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\Footbll.Repository.dll
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\Footbll.Repository.pdb
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\EntityFramework.dll
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\Footbll.IRepository.dll
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\Footbll.Model.dll
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\Footbll.IRepository.pdb
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\Footbll.Model.pdb
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\EntityFramework.xml
+D:\Git\Footbll\Football\Footbll.Repository\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\Git\Footbll\Football\Footbll.Repository\obj\Debug\Footbll.Repository.dll
+D:\Git\Footbll\Football\Footbll.Repository\obj\Debug\Footbll.Repository.pdb

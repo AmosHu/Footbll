@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "我爱足球-登录";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .form-signin .form-control {
+            position: relative;
+            height: auto;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: 16px;
+        }
+</style>
+<form class="form-signin" id="AddUserForm">
+    <h2 class="form-signin-heading">登录</h2>
+    <div class="form-group">
+        <label for="input01">用户名</label>
+        @Html.TextBox("UserName", "", new { @class = "form-control", @placeholder = "用户名/邮箱", @required = "" })
+    </div>
+    <div class="form-group">
+        <label for="input01">密码</label>
+        @Html.TextBox("Password", "", new { @class = "form-control", @placeholder = "密码", @required = "", type = "password" })
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="button" id="btn_Add">登  录</button>
+</form>
